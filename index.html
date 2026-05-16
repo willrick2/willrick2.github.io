@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Mon site GitHub Pages</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="site-header">
+<div class="container">
+<h1>Bienvenue sur mon site</h1>
+<p class="tagline">Site publié via GitHub Pages — Exemple simple</p>
+</div>
+</header>
+
+<main class="container">
+<section class="card">
+<h2>À propos</h2>
+<p>Voici une page de démonstration pour déployer sur GitHub Pages. Modifie ce contenu comme tu veux.</p>
+<a class="btn" href="#contact">Me contacter</a>
+</section>
+
+<section class="features">
+<div class="feature">
+<h3>Simple</h3>
+<p>HTML et CSS clairs et faciles à modifier.</p>
+</div>
+<div class="feature">
+<h3>Responsive</h3>
+<p>La mise en page s’adapte aux écrans mobiles.</p>
+</div>
+<div class="feature">
+<h3>Prêt</h3>
+<p>Place index.html à la racine du repo pour GitHub Pages.</p>
+</div>
+</section>
+
+<section id="contact" class="card">
+<h2>Contact</h2>
+<form class="contact-form" action="#" method="post">
+<label for="name">Nom</label>
+<input id="name" name="name" type="text" placeholder="Ton nom" />
+<label for="email">Email</label>
+<input id="email" name="email" type="email" placeholder="ton@email.com" />
+<label for="message">Message</label>
+<textarea id="message" name="message" rows="4" placeholder="Ton message"></textarea>
+<button class="btn" type="submit">Envoyer</button>
+</form>
+</section>
+</main>
+
+<footer class="site-footer">
+<div class="container">
+<p>© 2026 — Mon site GitHub Pages</p>
+</div>
+</footer>
+</body>
+</html>
+
+Fichier 2 — styles.css
+:root{
+--bg:#f6f8fb;
+--card:#ffffff;
+--accent:#2b7cff;
+--text:#10203a;
+--muted:#5b6b80;
+--radius:10px;
+--container-width:900px;
+font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box;}
+html,body{height:100%;margin:0;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;}
+.container{max-width:var(--container-width);margin:0 auto;padding:24px;}
+
+.site-header{background:linear-gradient(90deg, #ffffff 0%, #eef6ff 100%);border-bottom:1px solid #e6eefc;padding:36px 0;}
+.site-header h1{margin:0;font-size:28px;}
+.tagline{margin:6px 0 0;color:var(--muted);font-size:14px;}
+
+.card{background:var(--card);border-radius:var(--radius);box-shadow:0 6px 18px rgba(16,32,58,0.06);padding:20px;margin:20px 0;}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:8px;}
+.feature{background:linear-gradient(180deg,#fff,#fbfdff);padding:16px;border-radius:8px;border:1px solid #f0f6ff;text-align:center;}
+.feature h3{margin:0 0 8px;font-size:16px;}
+.feature p{margin:0;color:var(--muted);font-size:13px;}
+
+.contact-form{display:flex;flex-direction:column;gap:10px;}
+.contact-form label{font-size:13px;color:var(--muted);}
+.contact-form input, .contact-form textarea{
+padding:10px;border:1px solid #e6eefc;border-radius:6px;font-size:14px;background:#fbfdff;
+}
+.btn{
+display:inline-block;padding:10px 14px;background:var(--accent);color:#fff;border-radius:8px;text-decoration:none;border:none;cursor:pointer;
+box-shadow:0 8px 20px rgba(43,124,255,0.12);
+}
+.btn:hover{transform:translateY(-2px);transition:transform .12s ease;}
+
+.site-footer{padding:20px 0;text-align:center;color:var(--muted);font-size:13px;border-top:1px solid #eef4ff;background:transparent;margin-top:20px;}
+
+/* Responsive */
+@media (max-width:800px){
+.features{grid-template-columns:1fr; }
+.site-header h1{font-size:22px;}
+.container{padding:16px;}
+}
